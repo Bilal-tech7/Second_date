@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Our Second Date 💚</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- Floating hearts -->
+
+    <div class="hearts">
+
+        <span>💚</span>
+        <span>🤍</span>
+        <span>💚</span>
+        <span>🧸</span>
+        <span>💚</span>
+        <span>🤍</span>
+        <span>🧸</span>
+
+    </div>
+
+
+
+    <!-- Main container -->
+
+    <main class="container">
+
+
+        <!-- =========================================
+             QUESTION SECTION
+        ========================================== -->
+
+        <section id="questionSection" class="card">
+
+
+            <div class="plush-row">
+
+                <span class="plush">🧸</span>
+
+                <div class="main-heart">
+                    💚
+                </div>
+
+                <span class="plush">🧸</span>
+
+            </div>
+
+
+            <p class="small-text">
+                A very important question...
+            </p>
+
+
+            <h1>
+                When are we going<br>
+                on our second date? 💚
+            </h1>
+
+
+            <p class="subtitle">
+
+                I think we both know there should be
+                a second one... 👀
+
+            </p>
+
+
+            <div class="buttons">
+
+                <button
+                    id="yesButton"
+                    class="yes-button"
+                >
+                    YES 💚
+                </button>
+
+
+                <button
+                    id="noButton"
+                    class="no-button"
+                >
+                    NO 😭
+                </button>
+
+            </div>
+
+
+            <p
+                id="noMessage"
+                class="no-message"
+            ></p>
+
+
+            <div class="cute-note">
+
+                🧸 Don't worry, the plushies are
+                supporting the correct answer.
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =========================================
+             DATE PLANNING SECTION
+        ========================================== -->
+
+        <section
+            id="dateSection"
+            class="card hidden"
+        >
+
+
+            <div class="plush-row">
+
+                <span class="plush">🧸</span>
+
+                <div class="main-heart">
+                    💚
+                </div>
+
+                <span class="plush">🧸</span>
+
+            </div>
+
+
+            <h1>
+                YAY! 💚
+            </h1>
+
+
+            <p class="subtitle">
+
+                Okay... now let's plan our
+                second date. 🥰
+
+            </p>
+
+
+
+            <!-- =====================================
+                 DATE IDEA
+            ====================================== -->
+
+            <div class="idea-box">
+
+                <div class="idea-icon">
+                    🎮
+                </div>
+
+                <div>
+
+                    <h2>
+                        How about something domestic? 👀
+                    </h2>
+
+                    <p>
+
+                        You mentioned that we should do
+                        something domestic for our second date,
+                        so I was thinking...
+
+                    </p>
+
+                    <p class="idea-highlight">
+
+                        🎳 Bowling &nbsp; • &nbsp;
+                        🏎️ Racing &nbsp; • &nbsp;
+                        🎯 Darts &nbsp; • &nbsp;
+                        🕹️ Indoor Games
+
+                    </p>
+
+                    <p>
+
+                        Somewhere we can find all of these
+                        in one place and have a little
+                        competition. 😌
+
+                    </p>
+
+                    <p class="winner-text">
+
+                        Loser owes the winner... something. 👀😂
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =====================================
+                 ACTIVITY OPTIONS
+            ====================================== -->
+
+            <h2 class="section-title">
+
+                What would you like to do? 💚
+
+            </h2>
+
+
+            <div class="activity-grid">
+
+
+                <label class="activity-option">
+
+                    <input
+                        type="checkbox"
+                        name="activity"
+                        value="Bowling"
+                    >
+
+                    <span class="activity-card">
+
+                        <span class="activity-icon">
+                            🎳
+                        </span>
+
+                        <span>
+                            Bowling
+                        </span>
+
+                    </span>
+
+                </label>
+
+
+
+                <label class="activity-option">
+
+                    <input
+                        type="checkbox"
+                        name="activity"
+                        value="Racing Games"
+                    >
+
+                    <span class="activity-card">
+
+                        <span class="activity-icon">
+                            🏎️
+                        </span>
+
+                        <span>
+                            Racing
+                        </span>
+
+                    </span>
+
+                </label>
+
+
+
+                <label class="activity-option">
+
+                    <input
+                        type="checkbox"
+                        name="activity"
+                        value="Darts"
+                    >
+
+                    <span class="activity-card">
+
+                        <span class="activity-icon">
+                            🎯
+                        </span>
+
+                        <span>
+                            Darts
+                        </span>
+
+                    </span>
+
+                </label>
+
+
+
+                <label class="activity-option">
+
+                    <input
+                        type="checkbox"
+                        name="activity"
+                        value="Arcade / Indoor Games"
+                    >
+
+                    <span class="activity-card">
+
+                        <span class="activity-icon">
+                            🕹️
+                        </span>
+
+                        <span>
+                            Arcade Games
+                        </span>
+
+                    </span>
+
+                </label>
+
+
+            </div>
+
+
+
+            <p class="custom-option">
+
+                💭 Or tell me what you'd rather do...
+                
+            </p>
+
+
+
+            <!-- =====================================
+                 DATE AND TIME
+            ====================================== -->
+
+            <form id="dateForm">
+
+
+                <div class="form-group">
+
+                    <label for="date">
+
+                        📅 Pick a date
+
+                    </label>
+
+
+                    <input
+                        type="date"
+                        id="date"
+                        name="date"
+                        required
+                    >
+
+                </div>
+
+
+
+                <div class="form-group">
+
+                    <label for="time">
+
+                        🕐 Pick a time
+
+                    </label>
+
+
+                    <input
+                        type="time"
+                        id="time"
+                        name="time"
+                        required
+                    >
+
+                </div>
+
+
+
+                <div class="form-group">
+
+                    <label for="message">
+
+                        💌 Anything else?
+
+                    </label>
+
+
+                    <textarea
+                        id="message"
+                        name="message"
+                        placeholder="Tell me what you're thinking... 💚"
+                        rows="4"
+                    ></textarea>
+
+                </div>
+
+
+
+                <button
+                    type="submit"
+                    class="confirm-button"
+                >
+
+                    Confirm Our Date 💚
+
+                </button>
+
+
+            </form>
+
+
+        </section>
+
+
+
+        <!-- =========================================
+             CONFIRMATION SECTION
+        ========================================== -->
+
+        <section
+            id="confirmationSection"
+            class="card hidden"
+        >
+
+
+            <div class="success-plush">
+
+                🧸💚🧸
+
+            </div>
+
+
+            <h1>
+
+                IT'S A DATE! 💚
+
+            </h1>
+
+
+            <p class="subtitle">
+
+                I knew you'd eventually catch that
+                NO button. 😂
+
+            </p>
+
+
+
+            <div class="date-summary">
+
+
+                <p>
+
+                    📅 <strong>Date:</strong>
+
+                    <span id="selectedDate"></span>
+
+                </p>
+
+
+                <p>
+
+                    🕐 <strong>Time:</strong>
+
+                    <span id="selectedTime"></span>
+
+                </p>
+
+
+                <p>
+
+                    🎮 <strong>Activities:</strong>
+
+                    <span id="selectedActivities"></span>
+
+                </p>
+
+
+                <p id="messageDisplay"></p>
+
+
+            </div>
+
+
+            <div class="final-message">
+
+                <p>
+
+                    Can't wait to see you. 💚
+
+                </p>
+
+
+                <div class="mini-plushies">
+
+                    🧸 🧸 🧸
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+    </main>
+
+
+
+    <script src="script.js"></script>
+
+
+</body>
+
+</html>

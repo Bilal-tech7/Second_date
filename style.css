@@ -1,0 +1,1086 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+
+    min-height: 100vh;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background:
+        linear-gradient(
+            135deg,
+            #e8f8ee,
+            #ccefd8,
+            #f4fff7
+        );
+
+    color: #234c36;
+
+    overflow-x: hidden;
+
+    padding: 25px;
+
+}
+
+
+/* =========================================
+   MAIN CONTAINER
+========================================= */
+
+.container {
+
+    width: 100%;
+
+    max-width: 700px;
+
+    position: relative;
+
+    z-index: 10;
+
+}
+
+
+/* =========================================
+   CARD
+========================================= */
+
+.card {
+
+    background:
+        rgba(255, 255, 255, 0.95);
+
+    padding: 45px 40px;
+
+    border-radius: 30px;
+
+    text-align: center;
+
+    box-shadow:
+        0 20px 60px
+        rgba(36, 100, 65, 0.15);
+
+    border:
+        2px solid
+        rgba(88, 170, 112, 0.18);
+
+    animation:
+        appear 0.7s ease;
+
+}
+
+
+@keyframes appear {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(20px)
+            scale(0.97);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+
+    }
+
+}
+
+
+/* =========================================
+   PLUSHIES
+========================================= */
+
+.plush-row {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 25px;
+
+    margin-bottom: 15px;
+
+}
+
+
+.plush {
+
+    font-size: 55px;
+
+    animation:
+        plushFloat 2.5s ease-in-out infinite;
+
+}
+
+
+.plush:nth-child(3) {
+
+    animation-delay:
+        0.5s;
+
+}
+
+
+@keyframes plushFloat {
+
+    0%,
+    100% {
+
+        transform:
+            translateY(0)
+            rotate(-3deg);
+
+    }
+
+    50% {
+
+        transform:
+            translateY(-7px)
+            rotate(3deg);
+
+    }
+
+}
+
+
+.main-heart {
+
+    font-size: 65px;
+
+    animation:
+        heartbeat 1.5s infinite;
+
+}
+
+
+@keyframes heartbeat {
+
+    0% {
+
+        transform:
+            scale(1);
+
+    }
+
+    50% {
+
+        transform:
+            scale(1.1);
+
+    }
+
+    100% {
+
+        transform:
+            scale(1);
+
+    }
+
+}
+
+
+/* =========================================
+   TEXT
+========================================= */
+
+.small-text {
+
+    font-size: 15px;
+
+    color: #5c8c6c;
+
+    margin-bottom: 12px;
+
+}
+
+
+h1 {
+
+    font-size: 38px;
+
+    line-height: 1.25;
+
+    margin-bottom: 18px;
+
+    color: #22613b;
+
+}
+
+
+.subtitle {
+
+    font-size: 17px;
+
+    line-height: 1.6;
+
+    color: #52705d;
+
+    margin-bottom: 30px;
+
+}
+
+
+/* =========================================
+   YES / NO BUTTONS
+========================================= */
+
+.buttons {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 20px;
+
+    min-height: 80px;
+
+}
+
+
+button {
+
+    border: none;
+
+    cursor: pointer;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    padding: 16px 30px;
+
+    border-radius: 50px;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+
+}
+
+
+.yes-button {
+
+    background:
+        #42a866;
+
+    color: white;
+
+    box-shadow:
+        0 8px 20px
+        rgba(52, 140, 82, 0.3);
+
+}
+
+
+.yes-button:hover {
+
+    transform:
+        scale(1.08);
+
+    box-shadow:
+        0 12px 25px
+        rgba(52, 140, 82, 0.4);
+
+}
+
+
+.no-button {
+
+    background:
+        #edf2ee;
+
+    color:
+        #4f6256;
+
+    position: relative;
+
+    z-index: 100;
+
+}
+
+
+.no-message {
+
+    min-height: 25px;
+
+    margin-top: 18px;
+
+    color:
+        #368653;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+}
+
+
+/* =========================================
+   CUTE NOTE
+========================================= */
+
+.cute-note {
+
+    margin-top: 25px;
+
+    padding: 13px 18px;
+
+    background:
+        #f0faf3;
+
+    border-radius:
+        15px;
+
+    color:
+        #52705d;
+
+    font-size:
+        13px;
+
+}
+
+
+/* =========================================
+   HIDDEN
+========================================= */
+
+.hidden {
+
+    display: none;
+
+}
+
+
+/* =========================================
+   IDEA BOX
+========================================= */
+
+.idea-box {
+
+    display:
+        flex;
+
+    gap:
+        18px;
+
+    text-align:
+        left;
+
+    background:
+        #effaf2;
+
+    border:
+        2px solid
+        #d0eed9;
+
+    border-radius:
+        20px;
+
+    padding:
+        22px;
+
+    margin:
+        25px 0;
+
+}
+
+
+.idea-icon {
+
+    font-size:
+        40px;
+
+    flex-shrink:
+        0;
+
+}
+
+
+.idea-box h2 {
+
+    font-size:
+        19px;
+
+    color:
+        #287447;
+
+    margin-bottom:
+        10px;
+
+}
+
+
+.idea-box p {
+
+    font-size:
+        14px;
+
+    line-height:
+        1.6;
+
+    color:
+        #587162;
+
+    margin-bottom:
+        8px;
+
+}
+
+
+.idea-highlight {
+
+    font-weight:
+        bold;
+
+    color:
+        #2e8750 !important;
+
+}
+
+
+.winner-text {
+
+    font-weight:
+        bold;
+
+    color:
+        #287447 !important;
+
+}
+
+
+/* =========================================
+   ACTIVITY OPTIONS
+========================================= */
+
+.section-title {
+
+    font-size:
+        20px;
+
+    color:
+        #287447;
+
+    margin:
+        25px 0 15px;
+
+}
+
+
+.activity-grid {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap:
+        12px;
+
+}
+
+
+.activity-option {
+
+    cursor:
+        pointer;
+
+}
+
+
+.activity-option input {
+
+    display:
+        none;
+
+}
+
+
+.activity-card {
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    gap:
+        7px;
+
+    padding:
+        15px;
+
+    min-height:
+        95px;
+
+    border:
+        2px solid
+        #d9ebdf;
+
+    border-radius:
+        17px;
+
+    background:
+        #fbfffc;
+
+    color:
+        #456452;
+
+    font-weight:
+        bold;
+
+    transition:
+        all 0.2s ease;
+
+}
+
+
+.activity-icon {
+
+    font-size:
+        30px;
+
+}
+
+
+.activity-option:hover
+.activity-card {
+
+    transform:
+        translateY(-3px);
+
+    border-color:
+        #79bd91;
+
+}
+
+
+.activity-option input:checked
++ .activity-card {
+
+    background:
+        #e3f6e9;
+
+    border-color:
+        #42a866;
+
+    color:
+        #287447;
+
+    box-shadow:
+        0 5px 15px
+        rgba(66, 168, 102, 0.15);
+
+}
+
+
+.custom-option {
+
+    margin:
+        18px 0;
+
+    color:
+        #668070;
+
+    font-size:
+        14px;
+
+}
+
+
+/* =========================================
+   FORM
+========================================= */
+
+form {
+
+    text-align:
+        left;
+
+    margin-top:
+        20px;
+
+}
+
+
+.form-group {
+
+    margin-bottom:
+        20px;
+
+}
+
+
+label {
+
+    display:
+        block;
+
+    font-size:
+        15px;
+
+    font-weight:
+        bold;
+
+    margin-bottom:
+        8px;
+
+    color:
+        #3f674d;
+
+}
+
+
+input,
+textarea {
+
+    width:
+        100%;
+
+    padding:
+        14px 16px;
+
+    border:
+        2px solid
+        #d4e9da;
+
+    border-radius:
+        14px;
+
+    font-size:
+        16px;
+
+    font-family:
+        inherit;
+
+    outline:
+        none;
+
+    background:
+        #fbfffc;
+
+    color:
+        #345440;
+
+}
+
+
+input:focus,
+textarea:focus {
+
+    border-color:
+        #42a866;
+
+}
+
+
+textarea {
+
+    resize:
+        vertical;
+
+}
+
+
+.confirm-button {
+
+    width:
+        100%;
+
+    background:
+        #42a866;
+
+    color:
+        white;
+
+    margin-top:
+        5px;
+
+    box-shadow:
+        0 8px 20px
+        rgba(52, 140, 82, 0.25);
+
+}
+
+
+.confirm-button:hover {
+
+    transform:
+        translateY(-2px);
+
+}
+
+
+/* =========================================
+   CONFIRMATION
+========================================= */
+
+.success-plush {
+
+    font-size:
+        65px;
+
+    margin-bottom:
+        15px;
+
+}
+
+
+.date-summary {
+
+    background:
+        #effaf2;
+
+    border:
+        2px solid
+        #d5eddb;
+
+    border-radius:
+        18px;
+
+    padding:
+        20px;
+
+    margin:
+        25px 0;
+
+    text-align:
+        left;
+
+}
+
+
+.date-summary p {
+
+    margin-bottom:
+        13px;
+
+    font-size:
+        15px;
+
+    line-height:
+        1.5;
+
+}
+
+
+.date-summary p:last-child {
+
+    margin-bottom:
+        0;
+
+}
+
+
+.final-message {
+
+    font-size:
+        18px;
+
+    font-weight:
+        bold;
+
+    color:
+        #287447;
+
+}
+
+
+.mini-plushies {
+
+    margin-top:
+        15px;
+
+    font-size:
+        28px;
+
+}
+
+
+/* =========================================
+   FLOATING HEARTS / PLUSHIES
+========================================= */
+
+.hearts {
+
+    position:
+        fixed;
+
+    inset:
+        0;
+
+    pointer-events:
+        none;
+
+    overflow:
+        hidden;
+
+}
+
+
+.hearts span {
+
+    position:
+        absolute;
+
+    bottom:
+        -50px;
+
+    font-size:
+        25px;
+
+    animation:
+        floatHeart 9s linear infinite;
+
+    opacity:
+        0.55;
+
+}
+
+
+.hearts span:nth-child(1) {
+
+    left:
+        10%;
+
+    animation-delay:
+        0s;
+
+}
+
+
+.hearts span:nth-child(2) {
+
+    left:
+        25%;
+
+    animation-delay:
+        2s;
+
+}
+
+
+.hearts span:nth-child(3) {
+
+    left:
+        45%;
+
+    animation-delay:
+        4s;
+
+}
+
+
+.hearts span:nth-child(4) {
+
+    left:
+        62%;
+
+    animation-delay:
+        1s;
+
+}
+
+
+.hearts span:nth-child(5) {
+
+    left:
+        75%;
+
+    animation-delay:
+        3s;
+
+}
+
+
+.hearts span:nth-child(6) {
+
+    left:
+        88%;
+
+    animation-delay:
+        5s;
+
+}
+
+
+.hearts span:nth-child(7) {
+
+    left:
+        35%;
+
+    animation-delay:
+        6s;
+
+}
+
+
+@keyframes floatHeart {
+
+    0% {
+
+        transform:
+            translateY(0)
+            rotate(0deg);
+
+        opacity:
+            0;
+
+    }
+
+    15% {
+
+        opacity:
+            0.55;
+
+    }
+
+    100% {
+
+        transform:
+            translateY(-110vh)
+            rotate(360deg);
+
+        opacity:
+            0;
+
+    }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+
+    body {
+
+        padding:
+            15px;
+
+        align-items:
+            flex-start;
+
+        padding-top:
+            25px;
+
+    }
+
+
+    .card {
+
+        padding:
+            32px 20px;
+
+        border-radius:
+            25px;
+
+    }
+
+
+    h1 {
+
+        font-size:
+            29px;
+
+    }
+
+
+    .subtitle {
+
+        font-size:
+            15px;
+
+    }
+
+
+    .plush {
+
+        font-size:
+            45px;
+
+    }
+
+
+    .main-heart {
+
+        font-size:
+            55px;
+
+    }
+
+
+    .buttons {
+
+        gap:
+            12px;
+
+    }
+
+
+    button {
+
+        padding:
+            14px 22px;
+
+        font-size:
+            14px;
+
+    }
+
+
+    .idea-box {
+
+        flex-direction:
+            column;
+
+        text-align:
+            center;
+
+    }
+
+
+    .activity-grid {
+
+        grid-template-columns:
+            1fr 1fr;
+
+    }
+
+}
