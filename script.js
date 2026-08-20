@@ -32,7 +32,6 @@ const messageDisplay =
     document.getElementById("messageDisplay");
 
 
-
 /* ==========================================
    YES BUTTON
 ========================================== */
@@ -53,7 +52,6 @@ yesButton.addEventListener(
 );
 
 
-
 /* ==========================================
    RUNAWAY NO BUTTON
 ========================================== */
@@ -68,7 +66,6 @@ let lastMoveTime = 0;
 */
 
 function moveNoButton(mouseX, mouseY) {
-
 
     const now =
         Date.now();
@@ -141,7 +138,9 @@ function moveNoButton(mouseX, mouseY) {
         choose a random direction.
     */
 
-    if (distance < 1) {
+    if (
+        distance < 1
+    ) {
 
         directionX =
             Math.random() - 0.5;
@@ -320,7 +319,6 @@ function moveNoButton(mouseX, mouseY) {
 }
 
 
-
 /* ==========================================
    DESKTOP MOUSE CHASING
 ========================================== */
@@ -328,7 +326,6 @@ function moveNoButton(mouseX, mouseY) {
 document.addEventListener(
     "mousemove",
     function (event) {
-
 
         /*
             Don't do anything if the
@@ -401,7 +398,6 @@ document.addEventListener(
 );
 
 
-
 /* ==========================================
    MOBILE TOUCH
 ========================================== */
@@ -409,7 +405,6 @@ document.addEventListener(
 noButton.addEventListener(
     "touchstart",
     function (event) {
-
 
         event.preventDefault();
 
@@ -423,13 +418,11 @@ noButton.addEventListener(
             touch.clientY
         );
 
-
     },
     {
         passive: false
     }
 );
-
 
 
 /* ==========================================
@@ -438,8 +431,7 @@ noButton.addEventListener(
 
 dateForm.addEventListener(
     "submit",
-    function (event) {
-
+    async function (event) {
 
         event.preventDefault();
 
@@ -477,6 +469,11 @@ dateForm.addEventListener(
                     checkbox.value
             );
 
+
+        /*
+            Make sure date and time
+            have been selected.
+        */
 
         if (
             !date ||
@@ -546,96 +543,169 @@ dateForm.addEventListener(
 
 
         /*
-            Display date.
+            Prepare data for
+            Formspree.
         */
 
-        selectedDate.textContent =
-            formattedDate;
+        const formData =
+            new FormData();
 
 
-        selectedTime.textContent =
-            formattedTime;
-
-
-        /*
-            Display activities.
-        */
-
-        if (
-            activities.length > 0
-        ) {
-
-            selectedActivities.textContent =
-                activities.join(", ");
-
-        } else {
-
-            selectedActivities.textContent =
-                "Your choice! 💚";
-
-        }
-
-
-        /*
-            Display message.
-        */
-
-        if (
-            message.trim() !== ""
-        ) {
-
-            messageDisplay.innerHTML =
-                "💌 <strong>Message:</strong> " +
-                escapeHTML(message);
-
-        } else {
-
-            messageDisplay.textContent =
-                "💌 No message... but she said YES! 💚";
-
-        }
-
-
-        /*
-            Show confirmation.
-        */
-
-        dateSection
-            .classList
-            .add("hidden");
-
-
-        confirmationSection
-            .classList
-            .remove("hidden");
-
-
-        /*
-            Save locally for now.
-        */
-
-        localStorage.setItem(
-            "secondDate",
-            JSON.stringify({
-
-                date:
-                    formattedDate,
-
-                time:
-                    formattedTime,
-
-                activities:
-                    activities,
-
-                message:
-                    message
-
-            })
+        formData.append(
+            "date",
+            formattedDate
         );
+
+
+        formData.append(
+            "time",
+            formattedTime
+        );
+
+
+        formData.append(
+            "activities",
+            activities.length > 0
+                ? activities.join(", ")
+                : "Your choice! 💚"
+        );
+
+
+        formData.append(
+            "message",
+            message.trim() !== ""
+                ? message
+                : "No message"
+        );
+
+
+        /*
+            Send the response
+            privately to Formspree.
+        */
+
+        try {
+
+            const response =
+                await fetch(
+                    "https://formspree.io/f/mjyblkjo",
+                    {
+                        method:
+                            "POST",
+
+                        body:
+                            formData,
+
+                        headers:
+                            {
+                                "Accept":
+                                    "application/json"
+                            }
+                    }
+                );
+
+
+            /*
+                Check whether
+                Formspree accepted it.
+            */
+
+            if (
+                !response.ok
+            ) {
+
+                throw new Error(
+                    "Submission failed"
+                );
+
+            }
+
+
+            /*
+                Display date.
+            */
+
+            selectedDate.textContent =
+                formattedDate;
+
+
+            selectedTime.textContent =
+                formattedTime;
+
+
+            /*
+                Display activities.
+            */
+
+            if (
+                activities.length > 0
+            ) {
+
+                selectedActivities.textContent =
+                    activities.join(", ");
+
+            } else {
+
+                selectedActivities.textContent =
+                    "Your choice! 💚";
+
+            }
+
+
+            /*
+                Display message.
+            */
+
+            if (
+                message.trim() !== ""
+            ) {
+
+                messageDisplay.innerHTML =
+                    "💌 <strong>Message:</strong> " +
+                    escapeHTML(message);
+
+            } else {
+
+                messageDisplay.textContent =
+                    "💌 No message... but she said YES! 💚";
+
+            }
+
+
+            /*
+                Hide the form.
+            */
+
+            dateSection
+                .classList
+                .add("hidden");
+
+
+            /*
+                Show confirmation.
+            */
+
+            confirmationSection
+                .classList
+                .remove("hidden");
+
+
+        } catch (error) {
+
+            console.error(
+                "Form submission error:",
+                error
+            );
+
+
+            alert(
+                "Oops! Something went wrong. Please try again 💚"
+            );
+
+        }
 
     }
 );
-
 
 
 /* ==========================================
